@@ -1,0 +1,12 @@
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/royal</item>
+        <item name="colorPrimaryDark">@color/navy</item>
+        <item name="colorAccent">@android:color/white</item>
+        <item name="android:windowBackground">@drawable/gradient_background</item>
+    </style>
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <item name="android:windowBackground">@drawable/splash_screen_background</item>
+    </style>
+</resources>
