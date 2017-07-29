@@ -4,31 +4,37 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ImageButton
+    <Button
         android:id="@+id/previous"
         android:layout_width="@dimen/navigation_header_image_button_size"
         android:layout_height="@dimen/navigation_header_image_button_size"
         android:background="@null"
         android:contentDescription="@string/previous"
         android:layout_margin="@dimen/navigation_header_image_button_margin"
-        android:scaleType="fitCenter" />
+        android:scaleType="fitCenter"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textColor="@color/colorAccent"
+        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/title"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:textColor="@color/colorAccent"
         android:gravity="center"
         android:layout_weight="1"
-        android:textAppearance="?android:textAppearanceLarge" />
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textColor="@color/colorAccent" />
 
-    <ImageButton
+    <Button
         android:id="@+id/next"
         android:layout_width="@dimen/navigation_header_image_button_size"
         android:layout_height="@dimen/navigation_header_image_button_size"
         android:background="@null"
         android:contentDescription="@string/next"
         android:layout_margin="@dimen/navigation_header_image_button_margin"
-        android:scaleType="fitCenter" />
+        android:scaleType="fitCenter"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textColor="@color/colorAccent"
+        android:visibility="invisible" />
 
 </LinearLayout>

@@ -1,9 +1,9 @@
 <resources>
-    <declare-styleable name="NavigationHeaderView">
+    <declare-styleable name="NavbarView">
         <attr name="has_next" format="boolean" />
         <attr name="has_previous" format="boolean" />
-        <attr name="icon_next" format="reference" />
-        <attr name="icon_previous" format="reference" />
+        <attr name="icon_next" format="string" />
+        <attr name="icon_previous" format="string" />
         <attr name="title" format="string" />
     </declare-styleable>
 </resources>

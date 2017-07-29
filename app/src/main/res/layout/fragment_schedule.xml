@@ -1,12 +1,33 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.brettbeatty.roc.fragments.ScheduleFragment">
 
-    <TextView
+    <com.brettbeatty.roc.views.NavbarView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/schedule" />
+        android:layout_height="wrap_content"
+        app:has_next="true"
+        app:has_previous="true"
+        app:icon_next="@string/icon_settings"
+        app:icon_previous="@string/icon_barcode"
+        app:title="@string/schedule" />
 
-</FrameLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

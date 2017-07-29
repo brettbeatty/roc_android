@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="icon_barcode">&#xf02a;</string>
+    <string name="icon_schedule">&#xf03a;</string>
+    <string name="icon_settings">&#xf013;</string>
+</resources>
