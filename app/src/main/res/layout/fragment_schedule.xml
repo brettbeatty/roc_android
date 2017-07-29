@@ -8,6 +8,7 @@
     tools:context="com.brettbeatty.roc.fragments.ScheduleFragment">
 
     <com.brettbeatty.roc.views.NavbarView
+        android:id="@+id/navbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:has_next="true"
