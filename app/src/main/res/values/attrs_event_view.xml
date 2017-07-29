@@ -1,0 +1,15 @@
+<resources>
+    <declare-styleable name="EventView">
+        <attr name="event_id" format="string" />
+        <attr name="is_at_home" format="boolean" />
+        <attr name="location" format="string" />
+        <attr name="opponent" format="string" />
+        <attr name="sport" format="string" />
+        <attr name="start_time" format="string" />
+        <attr name="station" format="string" />
+        <attr name="exampleString" format="string" />
+        <attr name="exampleDimension" format="dimension" />
+        <attr name="exampleColor" format="color" />
+        <attr name="exampleDrawable" format="color|reference" />
+    </declare-styleable>
+</resources>
