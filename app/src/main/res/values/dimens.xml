@@ -7,4 +7,8 @@
     <dimen name="event_view_vertical_padding">8dp</dimen>
     <dimen name="navigation_header_image_button_size">30dp</dimen>
     <dimen name="navigation_header_image_button_margin">12dp</dimen>
+    <dimen name="pass_view_horizontal_margin">16dp</dimen>
+    <dimen name="pass_view_horizontal_padding">8dp</dimen>
+    <dimen name="pass_view_vertical_margin">8dp</dimen>
+    <dimen name="pass_view_vertical_padding">8dp</dimen>
 </resources>

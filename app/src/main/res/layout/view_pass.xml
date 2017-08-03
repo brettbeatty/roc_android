@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:layout_marginBottom="@dimen/pass_view_vertical_margin"
+    android:layout_marginEnd="@dimen/pass_view_horizontal_margin"
+    android:layout_marginLeft="@dimen/pass_view_horizontal_margin"
+    android:layout_marginRight="@dimen/pass_view_horizontal_margin"
+    android:layout_marginStart="@dimen/pass_view_horizontal_margin"
+    android:layout_marginTop="@dimen/pass_view_vertical_margin"
+    android:paddingBottom="@dimen/pass_view_vertical_padding"
+    android:paddingEnd="@dimen/pass_view_horizontal_padding"
+    android:paddingLeft="@dimen/pass_view_horizontal_padding"
+    android:paddingRight="@dimen/pass_view_horizontal_padding"
+    android:paddingStart="@dimen/pass_view_horizontal_padding"
+    android:paddingTop="@dimen/pass_view_vertical_padding">
+
+    <TextView
+        android:id="@+id/alias"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:textAppearanceLarge" />
+    <ImageView
+        android:id="@+id/barcode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/barcode"
+        android:adjustViewBounds="true"/>
+    <TextView
+        android:id="@+id/barcode_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textAppearance="?android:textAppearanceSmall" />
+
+</LinearLayout>
