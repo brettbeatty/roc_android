@@ -14,7 +14,9 @@ data class Pass(var alias: String, var barcode: String, var id: Long) {
     }
 
     class Schema(context: Context): SQLiteOpenHelper(context, DATABASE, null, SCHEMA_VERSION) {
-        private var database: SQLiteDatabase = SchemaLoader().execute(this).get()
+        private val databaseConnectionTask = SchemaLoader().execute(this)
+        private val database: SQLiteDatabase by lazy { databaseConnectionTask.get() }
+//        private var database: SQLiteDatabase = SchemaLoader().execute(this).get()
 
         fun addPass(alias: String, barcode: String): Long {
             val statement = database.compileStatement("INSERT OR IGNORE INTO passes (barcode, alias) VALUES (?, ?);")

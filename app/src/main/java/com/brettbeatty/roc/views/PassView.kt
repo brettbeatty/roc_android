@@ -23,8 +23,7 @@ class PassView: LinearLayout {
         set(value) {
             field = value
             barcodeValueView.text = value
-            val image = BarcodeDrawingTask().execute(value).get()
-            barcodeView.setImageBitmap(image)
+            BarcodeDrawingTask { barcodeView.setImageBitmap(it) }.execute(value)
         }
     val barcodeValueView: TextView by lazy { findViewById<TextView>(R.id.barcode_value) }
     val barcodeView: ImageView by lazy { findViewById<ImageView>(R.id.barcode) }
@@ -58,7 +57,7 @@ class PassView: LinearLayout {
         val TAG: String = PassView::class.java.simpleName
     }
 
-    class BarcodeDrawingTask: AsyncTask<String, Unit, Bitmap>() {
+    class BarcodeDrawingTask(val callback: (Bitmap) -> Unit): AsyncTask<String, Unit, Bitmap>() {
 
         override fun doInBackground(vararg args: String): Bitmap {
 
@@ -69,6 +68,11 @@ class PassView: LinearLayout {
             for (x in 0..matrix.width - 1) for (y in 0..matrix.height-1)
                 image.setPixel(x, y, if (matrix.get(x, y)) Color.BLACK else Color.WHITE)
             return image
+        }
+
+        override fun onPostExecute(result: Bitmap) {
+
+            callback(result)
         }
     }
 }
