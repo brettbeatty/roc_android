@@ -76,7 +76,7 @@ class EventView : LinearLayout {
             station = attributes.getString(R.styleable.EventView_station)
         attributes.recycle()
         // Inflate view
-        inflate(context, R.layout.event_view, this)
+        inflate(context, R.layout.view_event, this)
         updateSportAndOpponent()
         updateTimeAndLocation()
     }

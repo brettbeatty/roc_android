@@ -57,7 +57,7 @@ class NavbarView : LinearLayout {
 
     private fun init(attrs: AttributeSet?, defStyle: Int) {
         // Inflate view
-        inflate(context, R.layout.navbar_view, this)
+        inflate(context, R.layout.view_navbar, this)
         val font = ResourcesCompat.getFont(context, R.font.fontawesome_webfont)
         next?.typeface = font
         previous?.typeface = font

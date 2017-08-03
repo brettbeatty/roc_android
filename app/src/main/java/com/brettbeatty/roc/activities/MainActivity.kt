@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         pager!!.currentItem = SCHEDULE
     }
 
-    inner class MainAdapter(manager: FragmentManager): FragmentPagerAdapter(manager) {
+    class MainAdapter(manager: FragmentManager): FragmentPagerAdapter(manager) {
         val passListFragment = PassListFragment.newInstance()
         val scheduleFragment = ScheduleFragment.newInstance()
         val settingsFragment = SettingsFragment.newInstance()
