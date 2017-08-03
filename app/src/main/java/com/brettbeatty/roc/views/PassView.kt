@@ -28,7 +28,7 @@ class PassView: LinearLayout {
         }
     val barcodeValueView: TextView by lazy { findViewById<TextView>(R.id.barcode_value) }
     val barcodeView: ImageView by lazy { findViewById<ImageView>(R.id.barcode) }
-    var barcodeID: Int = 0
+    var barcodeID: Long = 0
 
     constructor(context: Context) : super(context) {
         init(null, 0)
