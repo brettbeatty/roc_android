@@ -17,10 +17,10 @@ class ScheduleFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         val view = inflater!!.inflate(R.layout.fragment_schedule, container, false)
         view.findViewById<Button>(R.id.previous).setOnClickListener {
-            (activity as MainActivity).pager!!.currentItem--
+            (activity as MainActivity).pager.currentItem--
         }
         view.findViewById<Button>(R.id.next).setOnClickListener {
-            (activity as MainActivity).pager!!.currentItem++
+            (activity as MainActivity).pager.currentItem++
         }
         return view
     }

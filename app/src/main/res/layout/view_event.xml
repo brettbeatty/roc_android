@@ -22,7 +22,7 @@
         android:id="@+id/sport_and_opponent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:textAppearanceMedium" />
+        android:textAppearance="?android:textAppearanceLarge" />
     <TextView
         android:id="@+id/time_and_location"
         android:layout_width="match_parent"
