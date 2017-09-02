@@ -2,8 +2,13 @@
     <string name="add_another_pass">&#xf067; Add Another Pass</string>
     <string name="app_name">ROC</string>
     <string name="barcode">Barcode</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete_pass">Delete This Pass</string>
     <string name="next">Next</string>
+    <string name="pass_name">Pass Name</string>
     <string name="previous">Previous</string>
+    <string name="save_pass">Save Your Pass</string>
+    <string name="scan_pass">Scan Your Pass</string>
     <string name="schedule">Schedule</string>
     <string name="settings">Settings</string>
     <string name="your_pass">Your Pass</string>

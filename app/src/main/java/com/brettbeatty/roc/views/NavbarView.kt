@@ -13,34 +13,31 @@ class NavbarView : LinearLayout {
     var hasNext:Boolean = false
         set(value) {
             field = value
-            next?.visibility = if (value) View.VISIBLE else View.INVISIBLE
+            next.visibility = if (value) View.VISIBLE else View.INVISIBLE
         }
     var hasPrevious:Boolean = false
         set(value) {
             field = value
-            previous?.visibility = if (value) View.VISIBLE else View.INVISIBLE
+            previous.visibility = if (value) View.VISIBLE else View.INVISIBLE
         }
     var iconNext:String = ""
         set(value) {
             field = value
-            next?.text = value
+            next.text = value
         }
     var iconPrevious:String = ""
         set(value) {
             field = value
-            previous?.text = value
+            previous.text = value
         }
-    private var next:Button? = null
-        get() = findViewById(R.id.next)
+    private val next: Button by lazy { findViewById<Button>(R.id.next) }
     var pageTitle:String = ""
         set(value) {
             field = value
-            titleView?.text = value
+            titleView.text = value
         }
-    private var previous:Button? = null
-        get() = findViewById(R.id.previous)
-    private var titleView:TextView? = null
-        get() = findViewById(R.id.title)
+    private val previous: Button by lazy { findViewById<Button>(R.id.previous) }
+    private val titleView: TextView by lazy { findViewById<TextView>(R.id.title) }
 
 
     constructor(context: Context) : super(context) {
@@ -59,8 +56,8 @@ class NavbarView : LinearLayout {
         // Inflate view
         inflate(context, R.layout.view_navbar, this)
         val font = ResourcesCompat.getFont(context, R.font.fontawesome_webfont)
-        next?.typeface = font
-        previous?.typeface = font
+        next.typeface = font
+        previous.typeface = font
         // Get custom attributes
         val attributes = context.obtainStyledAttributes(attrs, R.styleable.NavbarView, defStyle, 0)
         if (attributes.hasValue(R.styleable.NavbarView_has_next))
@@ -75,5 +72,4 @@ class NavbarView : LinearLayout {
             pageTitle = attributes.getString(R.styleable.NavbarView_title)
         attributes.recycle()
     }
-
 }

@@ -12,15 +12,14 @@ import com.brettbeatty.roc.fragments.ScheduleFragment
 import com.brettbeatty.roc.fragments.SettingsFragment
 
 class MainActivity : AppCompatActivity() {
-    var pager:ViewPager? = null
-        get() = findViewById(R.id.container)
+    val pager: ViewPager by lazy { findViewById<ViewPager>(R.id.container) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        pager!!.adapter = MainAdapter(supportFragmentManager)
-        pager!!.currentItem = SCHEDULE
+        pager.adapter = MainAdapter(supportFragmentManager)
+        pager.currentItem = SCHEDULE
     }
 
     class MainAdapter(manager: FragmentManager): FragmentPagerAdapter(manager) {
@@ -44,6 +43,6 @@ class MainActivity : AppCompatActivity() {
         val PASSES = 0
         val SCHEDULE = 1
         val SETTINGS = 2
-        val TAG = MainActivity::class.java.simpleName
+        val TAG: String = MainActivity::class.java.simpleName
     }
 }

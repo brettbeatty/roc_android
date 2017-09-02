@@ -16,7 +16,6 @@ data class Pass(var alias: String, var barcode: String, var id: Long) {
     class Schema(context: Context): SQLiteOpenHelper(context, DATABASE, null, SCHEMA_VERSION) {
         private val databaseConnectionTask = SchemaLoader().execute(this)
         private val database: SQLiteDatabase by lazy { databaseConnectionTask.get() }
-//        private var database: SQLiteDatabase = SchemaLoader().execute(this).get()
 
         fun addPass(alias: String, barcode: String): Long {
             val statement = database.compileStatement("INSERT OR IGNORE INTO passes (barcode, alias) VALUES (?, ?);")
@@ -29,10 +28,6 @@ data class Pass(var alias: String, var barcode: String, var id: Long) {
             val statement = database.compileStatement("DELETE FROM passes WHERE rowid=?;")
             statement.bindLong(1, id)
             return statement.executeUpdateDelete()
-        }
-
-        fun deletePass(pass: Pass): Int {
-            return deletePass(pass.id)
         }
 
         fun listPasses(): Array<Pass> {
@@ -56,10 +51,10 @@ data class Pass(var alias: String, var barcode: String, var id: Long) {
             return passes.toTypedArray()
         }
 
-        fun renamePass(pass: Pass): Int {
+        fun renamePass(id: Long, alias: String): Int {
             val statement = database.compileStatement("UPDATE passes SET alias=? WHERE rowid=?;")
-            statement.bindString(1, pass.alias)
-            statement.bindLong(2, pass.id)
+            statement.bindString(1, alias)
+            statement.bindLong(2, id)
             return statement.executeUpdateDelete()
         }
 

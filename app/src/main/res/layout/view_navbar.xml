@@ -6,11 +6,10 @@
 
     <Button
         android:id="@+id/previous"
-        android:layout_width="@dimen/navigation_header_image_button_size"
-        android:layout_height="@dimen/navigation_header_image_button_size"
+        android:layout_width="@dimen/navigation_header_button_size"
+        android:layout_height="@dimen/navigation_header_button_size"
         android:background="@null"
-        android:contentDescription="@string/previous"
-        android:layout_margin="@dimen/navigation_header_image_button_margin"
+        android:layout_margin="@dimen/navigation_header_button_margin"
         android:scaleType="fitCenter"
         android:textAppearance="?android:textAppearanceLarge"
         android:textColor="@color/colorAccent"
@@ -27,11 +26,10 @@
 
     <Button
         android:id="@+id/next"
-        android:layout_width="@dimen/navigation_header_image_button_size"
-        android:layout_height="@dimen/navigation_header_image_button_size"
+        android:layout_width="@dimen/navigation_header_button_size"
+        android:layout_height="@dimen/navigation_header_button_size"
         android:background="@null"
-        android:contentDescription="@string/next"
-        android:layout_margin="@dimen/navigation_header_image_button_margin"
+        android:layout_margin="@dimen/navigation_header_button_margin"
         android:scaleType="fitCenter"
         android:textAppearance="?android:textAppearanceLarge"
         android:textColor="@color/colorAccent"
