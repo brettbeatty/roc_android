@@ -13,4 +13,6 @@
     <dimen name="pass_view_horizontal_padding">8dp</dimen>
     <dimen name="pass_view_vertical_margin">8dp</dimen>
     <dimen name="pass_view_vertical_padding">8dp</dimen>
+    <dimen name="schedule_fragment_date_horizontal_margin">16dp</dimen>
+    <dimen name="schedule_fragment_date_vertical_margin">8dp</dimen>
 </resources>

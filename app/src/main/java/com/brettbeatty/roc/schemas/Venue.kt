@@ -3,7 +3,7 @@ package com.brettbeatty.roc.schemas
 import android.database.sqlite.SQLiteDatabase
 import com.brettbeatty.roc.utilities.DatabaseConnection
 
-data class Venue(var id: Long, var name: String, var latitude: String, var longitude: String, var address: String, var city: String, var state: String, var zip: String, var photoKey: String) {
+data class Venue(var id: Long, var name: String, var latitude: String, var longitude: String, var address: String, var city: String, var state: String, var zip_code: String, var photo_key: String) {
 
     companion object {
         val TAG: String = Pass::class.java.simpleName

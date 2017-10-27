@@ -2,10 +2,8 @@ package com.brettbeatty.roc.schemas
 
 import android.database.sqlite.SQLiteDatabase
 import com.brettbeatty.roc.utilities.DatabaseConnection
-import org.joda.time.LocalDateTime
-import org.joda.time.format.DateTimeFormat
 
-data class Event(var id: Long, var opponent: Opponent, var sport: Sport, var start: LocalDateTime, var venue: Venue) {
+data class Event(var id: Long, var opponent: Opponent, var sport: Sport, var start: String, var venue: Venue) {
 
     companion object {
         val TAG: String = Pass::class.java.simpleName
@@ -33,7 +31,7 @@ data class Event(var id: Long, var opponent: Opponent, var sport: Sport, var sta
         }
 
         fun listEvents(): Array<Event> {
-            val cursor = database.rawQuery("SELECT * FROM passes;", arrayOf<String>())
+            val cursor = database.rawQuery("SELECT * FROM events;", arrayOf<String>())
             val idColumn = cursor.getColumnIndexOrThrow("id")
             val opponentColumn = cursor.getColumnIndexOrThrow("opponent")
             val sportColumn = cursor.getColumnIndexOrThrow("sport")
@@ -43,18 +41,17 @@ data class Event(var id: Long, var opponent: Opponent, var sport: Sport, var sta
             val opponents = connection.opponents.listOpponents().associateBy({ it.id }, { it })
             val sports = connection.sports.listSports().associateBy({ it.id }, { it })
             val venues = connection.venues.listVenues().associateBy({ it.id }, { it })
-            val formatter = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss.SSSSSS")
+//            val formatter = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss.SSSSSS")
 
             cursor.moveToFirst()
             while (!cursor.isAfterLast) {
                 val id = cursor.getLong(idColumn)
                 val opponentID = cursor.getLong(opponentColumn)
                 val sportID = cursor.getLong(sportColumn)
-                val startString = cursor.getString(startColumn)
+                val start = cursor.getString(startColumn)
                 val venueID = cursor.getLong(venueColumn)
                 val opponent = opponents.getValue(opponentID)
                 val sport = sports.getValue(sportID)
-                val start = formatter.parseLocalDateTime(startString)
                 val venue = venues.getValue(venueID)
                 val event = Event(id, opponent, sport, start, venue)
 

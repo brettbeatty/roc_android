@@ -17,7 +17,7 @@ class SettingsFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         val view = inflater!!.inflate(R.layout.fragment_settings, container, false)
         view.findViewById<Button>(R.id.previous).setOnClickListener {
-            (activity as MainActivity).pager!!.currentItem--
+            (activity as MainActivity).pager.currentItem--
         }
         return view
     }

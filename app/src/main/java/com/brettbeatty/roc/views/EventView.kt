@@ -2,12 +2,19 @@ package com.brettbeatty.roc.views
 
 import android.content.Context
 import android.util.AttributeSet
+import android.util.Log
 import android.widget.LinearLayout
 import android.widget.TextView
 
 import com.brettbeatty.roc.R
+import org.joda.time.DateTime
+import org.joda.time.DateTimeZone
+import org.joda.time.LocalDateTime
 
 class EventView : LinearLayout {
+    var date: String = ""
+        get() = convertTime(startTime).toString("EEEE, MMMM d")
+//        get() = LocalDateTime(startTime).toString("EEEE, MMMM d")
     var eventID: String = ""
     var isAtHome: Boolean = false
         set(value) {
@@ -27,7 +34,7 @@ class EventView : LinearLayout {
         }
     var sport: String = ""
         set(value) {
-            field = value
+            field = value.split(" ").map { it.capitalize() }.joinToString(" ")
             updateSportAndOpponent()
         }
     private var sportAndOpponent: TextView? = null
@@ -42,6 +49,9 @@ class EventView : LinearLayout {
             field = value
             if (!isAtHome) updateTimeAndLocation()
         }
+    var time: String = ""
+        get() = if (startTime.isNotEmpty()) convertTime(startTime).toString("h:mma") else ""
+//        get() = if (startTime.isNotEmpty()) LocalDateTime(startTime).toString("h:mma") else ""
     private var timeAndLocation: TextView? = null
         get() = findViewById(R.id.time_and_location)
 
@@ -56,6 +66,8 @@ class EventView : LinearLayout {
     constructor(context: Context, attrs: AttributeSet, defStyle: Int) : super(context, attrs, defStyle) {
         init(attrs, defStyle)
     }
+
+    private fun convertTime(timestamp: String) = DateTime(DateTimeZone.getDefault().convertUTCToLocal(DateTime(timestamp).millis))
 
     private fun init(attrs: AttributeSet?, defStyle: Int) {
         // Get custom attributes
@@ -86,6 +98,6 @@ class EventView : LinearLayout {
     }
 
     private fun updateTimeAndLocation() {
-        timeAndLocation?.text = if (isAtHome) "$startTime at $location" else "$startTime on $station"
+        timeAndLocation?.text = if (isAtHome) "$time at $location" else "$startTime on $station"
     }
 }
